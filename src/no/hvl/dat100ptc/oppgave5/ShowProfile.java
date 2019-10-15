@@ -1,11 +1,11 @@
 package no.hvl.dat100ptc.oppgave5;
 
 import easygraphics.EasyGraphics;
-import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
 import no.hvl.dat100ptc.oppgave2.GPSData;
 import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
 import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
+import no.hvl.dat100ptc.oppgave3.*;
 import no.hvl.dat100ptc.oppgave4.GPSComputer;
 
 import javax.swing.JOptionPane;
@@ -25,6 +25,12 @@ public class ShowProfile extends EasyGraphics {
 		GPSComputer gpscomputer =  new GPSComputer(filename);
 
 		gpspoints = gpscomputer.getGPSPoints();
+		
+		double[] elevations = new double[gpspoints.length];
+		for (int i = 0; i < elevations.length; i++) {
+			elevations[i] = gpspoints[i].getElevation();
+		}
+		MAXBARHEIGHT = (int)GPSUtils.findMax(elevations);
 		
 	}
 
@@ -47,8 +53,14 @@ public class ShowProfile extends EasyGraphics {
 		// ybase indicates the position on the y-axis where the columns should start
 		
 		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
+		
+		/* tabell med høyder */
+		
+		setColor(23,72,112);
+		for (int i = 0; i < gpspoints.length; i++) {
+			fillRectangle(MARGIN+3*i, ybase-(int)(gpspoints[i].getElevation()), 2, (int)(gpspoints[i].getElevation()));
+		}
+//		throw new UnsupportedOperationException(TODO.method());
 	
 		// TODO - SLUTT
 	}

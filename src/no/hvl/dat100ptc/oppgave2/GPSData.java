@@ -8,11 +8,14 @@ public class GPSData {
 	private GPSPoint[] gpspoints;
 	protected int antall = 0;
 
-	public GPSData(int antall) {
+	/* Konstruktør */
+	public GPSData(int n) {  // n var antall i original kode
 
 		// TODO - START
+		this.antall = 0;
+		this.gpspoints = new GPSPoint[n];
 		
-		throw new UnsupportedOperationException(TODO.construtor("GPSData"));
+//		throw new UnsupportedOperationException(TODO.construtor("GPSData"));
 
 		// TODO - SLUTT
 	}
@@ -26,8 +29,15 @@ public class GPSData {
 		boolean inserted = false;
 
 		// TODO - START
+		if (antall <  gpspoints.length) {
+			this.gpspoints[antall] = gpspoint;
+			antall++;
+			inserted = true;
+		}
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return inserted;
+		
+//		throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - SLUTT
 	}
@@ -35,10 +45,14 @@ public class GPSData {
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
 
 		GPSPoint gpspoint;
-
-		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		// TODO - START
+		gpspoint = GPSDataConverter.convert(time, latitude, longitude, elevation);
+		
+		gpspoints[antall] = gpspoint;
+		return insertGPS(gpspoint);
+		
+//		throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - SLUTT
 		
@@ -49,12 +63,28 @@ public class GPSData {
 		System.out.println("====== Konvertert GPS Data - START ======");
 
 		// TODO - START
+		
+		for (GPSPoint point : gpspoints) {
+			System.out.println(point.toString());
+		}
+		
+		
+		/* med utvidet løkke */
+		for (int i = 0; i < antall; i++) {
+			System.out.println(gpspoints[i].toString());
+		}
+		
+		
 
-		throw new UnsupportedOperationException(TODO.method());
+//		throw new UnsupportedOperationException(TODO.method());
 
 		// TODO - SLUTT
 		
-		// System.out.println("====== Konvertert GPS Data - SLUTT ======");
+		System.out.println("====== Konvertert GPS Data - SLUTT ======");
 
 	}
+	
+
+	
+	
 }
