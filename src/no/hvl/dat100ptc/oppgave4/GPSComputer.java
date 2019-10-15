@@ -150,7 +150,7 @@ public class GPSComputer {
 			met = 4;
 		if (speedmph > 10)
 			met = 6;
-		 if (speedmph > 12)
+		if (speedmph > 12)
 			met = 8;
 		if (speedmph > 14)
 			met = 10;
