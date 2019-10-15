@@ -204,8 +204,7 @@ public class GPSComputer {
 		System.out.println("==============================================");
 //		throw new UnsupportedOperationException(TODO.method());
 		
-		// TODO - SLUTT
-		
+		// TODO - SLUTT	
 	}
 
 	/* Ekstraoppgave (a) Metode som beregner stigningsprosent for de ulike deler av ruten */
