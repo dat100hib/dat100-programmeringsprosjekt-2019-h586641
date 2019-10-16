@@ -175,11 +175,10 @@ public class GPSComputer {
 
 		// TODO - START
 		
-//		for (int i = 0; i < speeds().length; i++) {
-//			totalkcal += kcal (weight, gpspoints[i+1].getTime() - gpspoints[i].getTime(), speeds()[i]);
-//		}
+		for (int i = 0; i < speeds().length; i++) {
+			totalkcal += kcal (weight, gpspoints[i+1].getTime() - gpspoints[i].getTime(), speeds()[i]);
+		}
 		
-		totalkcal = kcal(weight, totalTime(), averageSpeed());
 		return totalkcal;
 		
 //		throw new UnsupportedOperationException(TODO.method());
