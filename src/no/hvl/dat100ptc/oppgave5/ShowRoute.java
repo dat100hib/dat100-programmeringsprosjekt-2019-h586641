@@ -35,10 +35,11 @@ public class ShowRoute extends EasyGraphics {
 		makeWindow("Route", MAPXSIZE + 2 * MARGIN, MAPYSIZE + 2 * MARGIN);
 
 		showRouteMap(MARGIN + MAPYSIZE);
+		
+		showStatistics();
 
 		playRoute(MARGIN + MAPYSIZE);
 
-		showStatistics();
 	}
 
 	// antall x-pixels per lengdegrad
